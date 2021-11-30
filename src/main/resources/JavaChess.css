@@ -1,0 +1,28 @@
+/*
+board colours:
+    black is #88340c
+    white is #f2e9d8
+    available square is #0F9D58
+    kill square is #DB4437
+    selected square is #4285F4
+    unclicked square is #1A1A1A
+*/
+.square-base{
+    -fx-border-color: #1A1A1A;
+    -fx-border-width: 3px;
+}
+.square-white{
+    -fx-background-color: #f2e9d8;
+}
+.square-black{
+    -fx-background-color: #88340c;
+}
+.square-selected{
+    -fx-border-color: #4285F4;
+}
+.square-kill{
+    -fx-border-color: #DB4437;
+}
+.square-available{
+    -fx-border-color: #0F9D58;
+}
