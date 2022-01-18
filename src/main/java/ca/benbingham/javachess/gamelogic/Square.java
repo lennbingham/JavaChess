@@ -5,6 +5,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Square {
+    /*
+    Pretty much the most important class within the program and the only instance within the project of object orientated programming.
+
+    There is an object created from this class to represent each square on the board and each object changes to represent the piece on the tile.
+    information includes:
+        - The available moves that piece has (calculated with a method from the "availableMoves" class)
+        - The squares position in the 8x8 grid
+        - Its GUI information
+        - And more
+
+     */
     public int row;
     public int column;
     public Button buttonObject;

@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 public class PawnPromotion {
+    /*
+    * This class simply creates a window allowing you to select a piece to promote your pawn to.
+    * */
     Stage promotionStage = new Stage();
     GridPane promotionGrid = new GridPane();
     Scene promotionScene = new Scene(promotionGrid, 128, 128);

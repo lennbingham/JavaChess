@@ -5,6 +5,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+/*
+* This class allows for easier creation and access of window information for all windows in the project including the pawn promotion popup
+* */
 public class Window {
     public String title;
     public int width;

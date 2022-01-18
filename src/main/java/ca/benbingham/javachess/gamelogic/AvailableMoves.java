@@ -1,6 +1,9 @@
 package ca.benbingham.javachess.gamelogic;
 
 public class AvailableMoves {
+    /*
+    This class is dedicated to calculating the available moves for a given piece. Each piece is given its own method that is than called when needed.
+     */
     Square[] squareList;
     public boolean blackKingCheck;
     public boolean whiteKingCheck;
@@ -8,9 +11,11 @@ public class AvailableMoves {
     public boolean blackKingCheckmate;
     public boolean whiteKingCheckmate;
 
+    // The class constructor which gets the "squareList" variable allowing all non-static methods within the class access.
     public AvailableMoves(Square[] squareList) {
         this.squareList = squareList;
     }
+
 
     public void clearAvailableMoves(int numberInList) {
         for (int i = 0; i < 64; i++) {

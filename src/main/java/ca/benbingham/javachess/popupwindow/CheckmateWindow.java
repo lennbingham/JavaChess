@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 public class CheckmateWindow {
+    /*
+    * This class simply creates a window that displays who won the game.
+    * */
 
     Stage checkmateStage = new Stage();
     StackPane checkmatePane = new StackPane();

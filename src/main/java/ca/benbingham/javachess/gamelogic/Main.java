@@ -10,6 +10,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    /*
+    This class handles most of the game code (ie method calls) and the overall flow of the actual game such as who goes first and detecting win states (via method calls)
+    It also handles almost all the GUI needs for the game such as: CSS, Window initialization, Window Title, and button events.
+     */
     public static void main(String[] args) {
         launch();
     }
@@ -30,11 +34,11 @@ public class Main extends Application {
         mainWindow.stage.setTitle(mainWindow.title);
         mainWindow.stage.setScene(scene);
 
-        //mainWindow.scene.getStylesheets().add(getClass().getResource("styleSheets/JavaChess.css").toExternalForm());
-
-
         mainWindow.scene.getStylesheets().add("JavaChess.css");
 
+        /*
+        * This array holds every square on the board and is passed into almost all methods and objects. It is very important.
+        * */
         Square[] squareList = new Square[64];
 
         int counter = 0;
@@ -59,6 +63,7 @@ public class Main extends Application {
             boardGrid.add(squareList[i].buttonObject, squareList[i].column, squareList[i].row);
         }
 
+        // This block colours every square
         counter = 0;
         int evenOrOdd = 1;
 
@@ -80,6 +85,7 @@ public class Main extends Application {
         }
 
         /*
+        A drawing that shows which number relates to each square on the board
         _________________________
         | 0| 1| 2| 3| 4| 5| 6| 7|
         |-----------------------|
@@ -158,6 +164,17 @@ public class Main extends Application {
         }
     }
 
+    /*
+    * This method is arguably the most important in the project due to how often it is called and what it does.
+    * It is called whenever any button is pressed and based souly on which one is pressed and access to the "squareList" array
+    * this method can decicde what should happen next, including:
+    *   - Advancing the turn
+    *   - Taking pieces
+    *   - Moving pieces
+    *   - Detecting Check
+    *   - Detecting Checkmate
+    *   - and ending the game
+    * */
     public void pressButton(int numberInList, Square[] squareList) {
         AvailableMoves availableMoves = new AvailableMoves(squareList);
 
@@ -177,7 +194,6 @@ public class Main extends Application {
                 }
                 availableMoves.generateAvailableMoves(numberInList);
                 availableMoves.testAvailableMovesForCheck(numberInList);
-                squareList[numberInList].addPieceImageToButton(51, squareList);
 
                 for (int i = 0; i < 64; i++) {
                     if (squareList[numberInList].availableMoves[i].equals("A")) {
